@@ -14,3 +14,8 @@
 .btn {
     @apply  py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
+
+body {
+    width: 1360px;
+    margin: auto;
+}
