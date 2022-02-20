@@ -5,9 +5,12 @@
 @tailwind utilities;
 
 .card {
-    @apply  bg-white rounded overflow-hidden shadow-md relative;
+    @apply  bg-white rounded overflow-hidden shadow-md relative hover:scale-105;
 }
 
 .badge {
     @apply  absolute top-0 ml-2 mt-2 flex justify-center items-center   bg-secondary-100 text-secondary-200 text-xs uppercase font-extrabold rounded px-1 py-1 ;
+}
+.btn {
+    @apply  py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
