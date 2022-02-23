@@ -470,20 +470,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.fixed{
-  position: fixed;
-}
-
 .bottom-0{
   bottom: 0px;
 }
 
 .col-span-4{
   grid-column: span 4 / span 4;
-}
-
-.float-right{
-  float: right;
 }
 
 .m-4{
@@ -520,6 +512,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-1{
   margin-top: 0.25rem;
+}
+
+.mr-1{
+  margin-right: 0.25rem;
 }
 
 .mb-16{
@@ -656,19 +652,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(226 226 213 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100{
+.bg-title{
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(108 194 74 / var(--tw-bg-opacity));
 }
 
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-blue-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .bg-clip-padding{
@@ -741,8 +732,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.5rem;
 }
 
-.pt-6{
-  padding-top: 1.5rem;
+.pt-10{
+  padding-top: 2.5rem;
+}
+
+.pb-4{
+  padding-bottom: 1rem;
 }
 
 .text-center{
@@ -795,10 +790,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 400;
 }
 
-.font-medium{
-  font-weight: 500;
-}
-
 .uppercase{
   text-transform: uppercase;
 }
@@ -812,7 +803,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.text-\[\#6cc24a\]{
+.text-title{
   --tw-text-opacity: 1;
   color: rgb(108 194 74 / var(--tw-text-opacity));
 }
@@ -840,11 +831,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-secondary-200{
   --tw-text-opacity: 1;
   color: rgb(136 136 131 / var(--tw-text-opacity));
-}
-
-.text-gray-800{
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 .opacity-70{
@@ -905,24 +891,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .badge{
   position: absolute;
   top: 0px;
-  margin-left: 0.5rem;
+  right: 0px;
+  margin-right: 0.5rem;
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.25rem;
+  border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgb(226 226 213 / var(--tw-bg-opacity));
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 800;
-  text-transform: uppercase;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 0.5rem;
   --tw-text-opacity: 1;
-  color: rgb(136 136 131 / var(--tw-text-opacity));
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .btn{
@@ -938,9 +921,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   letter-spacing: 0.05em;
 }
 
-body {
-  width: 1360px;
-  margin: auto;
+.title{
+  cursor: pointer;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(108 194 74 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.title:hover{
+  --tw-text-opacity: 1;
+  color: rgb(255 99 99 / var(--tw-text-opacity));
 }
 
 .hover\:scale-110:hover{
@@ -1073,11 +1069,19 @@ body {
     display: flex;
   }
 
+  .lg\:grid{
+    display: grid;
+  }
+
   .lg\:hidden{
     display: none;
   }
 
   .lg\:grid-cols-6{
     grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:justify-end{
+    justify-content: flex-end;
   }
 }

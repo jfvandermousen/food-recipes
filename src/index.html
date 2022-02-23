@@ -9,14 +9,14 @@
 
 </head>
 <body class="text-gray-600 font-body ">
-    <div class="grid lg:grid-cols-6">   <!--wrapper-->
+    <div class="lg:grid lg:grid-cols-6">   <!--wrapper-->
 
         <div class="lg:col-span-1">
             <nav class="p-2">
                 <div class="flex justify-between items-center">
                   <!-- <img src="./img/chef-hat.png" alt="" class="w-12"> -->  
-                    <h1 class="font-bold uppercase p-4 border-b">
-                        <a href="/" class="text-[#6cc24a] text-lg ">Cooking recipes</a>       
+                    <h1 class="font-bold uppercase p-4">
+                        <a href="/" class="text-title text-lg ">Cooking recipes</a>       
                     </h1>
                     <div class="px-4 cursor-pointer lg:hidden" id="burger">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,7 +24,7 @@
                       </svg>
                     </div>
                 </div>
-                <ul class=" flex-col items-end mr-3 mt-5 hidden lg:flex"  id="menu">
+                <ul class=" flex-col items-end mr-3 mt-5 hidden lg:flex lg:justify-end"  id="menu">
                     <li class="text-gray-700 font-bold p-1"><a href="#"><span><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                       </svg></span></a></li>
@@ -55,42 +55,70 @@
                 <div class="card">
                     <img src="./img/noodles_soup.png" alt="Vegetables Noodle soup"class="w-full object-cover">
                     <div class="m-4">
-                        <span class="font-bold">Vegetables Noodle soup</span>
+                        <h2 class="title">Vegetables Noodle soup</h2>
                         <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                        <span class="text-gray-600 inline-block float-right">25 mins</span>
+                        <div class="mt-1 opacity-70 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="text-gray-600  text-xs">25 mins</span>
+                        </div>
+                        <div class="mt-1  flex items-center opacity-70">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                            ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                            <span class="text-gray-600  text-xs">Medium</span>
+                        </div>
                     </div>
                     <div class="badge">
-                        <span class="text-gray-600 text-xs">25 mins</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="./img/wok_paprika.jpg" alt="Vegetables Noodle soup"class="w-full object-cover">
+                    <img src="./img/pastilla.jpg" alt="pastilla"class="w-full object-cover">
                     <div class="m-4">
-                        <span class="font-bold">Porc Noodle soup</span>
+                        <h2 class="title">Pastilla</h2>
                         <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                        <div class="mt-1 opacity-70">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="mt-1 opacity-70 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          <span class="text-gray-600 inline-block text-xs">25 mins</span>
+                          <span class="text-gray-600  text-xs">25 mins</span>
                         </div>
-                        
+                        <div class="mt-1  flex items-center opacity-70">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                            ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                            <span class="text-gray-600  text-xs">Medium</span>
+                        </div>
                     </div>
                     <div class="badge">
-                        <span class="text-gray-600 text-xs">25 mins</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="./img/potage_aux_nouilles_et_legumes_.jpeg" alt="Vegetables Noodle soup"class="w-full object-cover">
+                    <img src="./img/tajine.jpg" alt="tajine"class="w-full object-cover">
                     <div class="m-4">
-                        <span class="font-bold">Noodle soup</span>
+                        <h2 class="title">Tajine</h2>
                         <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                        <div class="mt-1 opacity-70">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="mt-1 opacity-70 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          <span class="text-gray-600 inline-block text-xs">25 mins</span>
+                          <span class="text-gray-600  text-xs">25 mins</span>
                         </div>
+                        <div class="mt-1  flex items-center opacity-70">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                            ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                            <span class="text-gray-600  text-xs">Medium</span>
+                        </div>
+                    </div>
+                    <div class="badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
                     </div>
                 </div>
             </div>
@@ -102,44 +130,72 @@
                 <div class="mt-8 grid gap-10 md:grid-cols-3" >
                     <!--cards-->
                     <div class="card">
-                        <img src="./img/noodles_soup.png" alt="Vegetables Noodle soup"class="w-full object-cover">
+                        <img src="./img/donuts.jpg" alt="donust" class="w-full object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Vegetables Noodle soup</span>
+                            <h2 class="title">Donuts</h2>
                             <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                            <span class="text-gray-600 inline-block float-right">25 mins</span>
+                            <div class="mt-1 opacity-70 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span class="text-gray-600  text-xs">25 mins</span>
+                            </div>
+                            <div class="mt-1  flex items-center opacity-70">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                                ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                                <span class="text-gray-600  text-xs">Medium</span>
+                            </div>
                         </div>
                         <div class="badge">
-                            <span class="text-gray-600 text-xs">25 mins</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                              </svg>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./img/wok_paprika.jpg" alt="Vegetables Noodle soup"class="w-full object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Porc Noodle soup</span>
+                            <h2 class="title">Porc Noodle soup</h2>
                             <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                            <div class="mt-1 opacity-70">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="mt-1 opacity-70 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
-                              <span class="text-gray-600 inline-block text-xs">25 mins</span>
+                              <span class="text-gray-600  text-xs">25 mins</span>
                             </div>
-                            
+                            <div class="mt-1  flex items-center opacity-70">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                                ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                                <span class="text-gray-600  text-xs">Medium</span>
+                            </div>
                         </div>
                         <div class="badge">
-                            <span class="text-gray-600 text-xs">25 mins</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                              </svg>
                         </div>
                     </div>
                     <div class="card">
                         <img src="./img/potage_aux_nouilles_et_legumes_.jpeg" alt="Vegetables Noodle soup"class="w-full object-cover">
                         <div class="m-4">
-                            <span class="font-bold">Noodle soup</span>
+                            <h2 class="title">Noodle soup</h2>
                             <span class="block text-gray-500 text-sm">Recipe by Marina</span>
-                            <div class="mt-1 opacity-70">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="mt-1 opacity-70 flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
-                              <span class="text-gray-600 inline-block text-xs">25 mins</span>
+                              <span class="text-gray-600  text-xs">25 mins</span>
                             </div>
+                            <div class="mt-1  flex items-center opacity-70">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 opacity-70"  viewBox="0 0 24 24"
+                                ><path d="M3.7 11.3H8v7.9H3.7zm6.5-2.7h4.3v10.6h-4.3zm6.5-4.4v15H21v-15h-4.3zm3.5 14.2h-2.7V5h2.7v13.4z"></path></svg>
+                                <span class="text-gray-600  text-xs">Medium</span>
+                            </div>
+                        </div>
+                        <div class="badge">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                              </svg>
                         </div>
                     </div>
                 </div>
@@ -159,12 +215,12 @@
 
     </div>
 
-    <footer class="bg-gray-100 text-center bottom-0 w-full">
-      <div class="px-6 pt-6">
+    <footer class="bg-title text-center bottom-0 w-full">
+      <div class="px-6 pt-10 pb-4">
         <form action="">
           <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
             <div class="md:ml-auto md:mb-6">
-              <p class="text-gray-800">
+              <p class="text-white text-lg">
                 <strong>Sign up for our newsletter</strong>
               </p>
             </div>
@@ -194,15 +250,14 @@
             </div>
     
             <div class="md:mr-auto mb-6">
-              <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
+              <button type="button" class="inline-block px-6 py-2.5 bg-primary text-white font-bold text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
             </div>
           </div>
         </form>
       </div>
     
-      <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-gray-800" href="https://tailwind-elements.com/">Tailwind Elements</a>
+      <div class="text-center text-gray-700 p-4 bg-white">
+        © 2022 Copyright
       </div>
     </footer>
 
