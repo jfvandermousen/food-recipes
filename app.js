@@ -3,6 +3,7 @@ const { sendFile } = require('express/lib/response')
 const app = express()
 
 
+
 // register view engines
 
 app.set('view engine', 'ejs');
@@ -15,7 +16,7 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
     const recipes =[
-        {title:'Vegetables Noodle soup', srcImg:"../src/img/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
+        {title:'Vegetables Noodle soup', srcImg:"noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
         {title:'Pastilla', srcImg:"../src/img/pastilla.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
         {title:'Tajine', srcImg:"../src/img/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
         {title:'Donuts', srcImg:"../src/img/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
@@ -44,6 +45,8 @@ app.get('/about-me', (req, res) => {
 res.redirect('./about')
 })
 
+
+app.use(express.static(__dirname + '/public'));
 
 //404 page
 
