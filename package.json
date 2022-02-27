@@ -3,6 +3,11 @@
     "tailwindcss": "^3.0.23"
   },
   "scripts": {
-    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build-css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
   }
 }
