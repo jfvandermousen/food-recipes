@@ -1,64 +1,95 @@
-const express = require('express')
-const { sendFile } = require('express/lib/response')
-const app = express()
-const morgan =require('morgan')
+const express = require('express');
+const { use } = require('express/lib/application');
+const mongoose = require('mongoose');
+const Recipe = require('./models/recipe');
 
+const morgan = require('morgan');
+const app = express();
+
+//Mongo DB connection
+const dbURI = 'mongodb+srv://jf:jfvan7182@recipes.dujns.mongodb.net/recipesblog?retryWrites=true&w=majority';
+
+const port = 5000
+
+
+
+ mongoose.connect(dbURI)
+ .then(() => app.listen(port))
+  .catch(error => console.log(error));
 
 // register view engines
 
 app.set('view engine', 'ejs');
 
-const port = 3000
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-  })
-
-
-  //middleware  & static files
 
 app.use(express.static('public'))
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
+
+app.get('/add-recipe',(req,res) => {
+  const recipe = new Recipe({
+    title:'Vegetables Noodle soup',
+    srcImg :'/images/potage_aux_nouilles_et_legumes_.jpg',
+    cooker:'Marina',
+    time:25,
+    difficulty: 'Medium',
+    tags: 'latest',
+    description: 'Boil 1/2Liter of water, put the noodles 3minutes....'
+  });
+  recipe.save()
+  .then((result) => {
+    res.send(result)
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+})
+
 
 const latestRecipes = [
-    {id: 1,title:'Vegetables Noodle soup', srcImg:"/images/potage_aux_nouilles_et_legumes_.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 2,title:'Pastilla', srcImg:"/images/pastilla.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 3,title:'Tajine', srcImg:"/images/tajine.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
+     {id: 1,title:'Vegetables Noodle soup', srcImg:"/images/potage_aux_nouilles_et_legumes_.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
+      {id: 2,title:'Pastilla', srcImg:"/images/pastilla.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
+      {id: 3,title:'Tajine', srcImg:"/images/tajine.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
 ]
 
 const popularRecipes =[
-    {id: 4,title:'Donuts', srcImg:"/images/donuts.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 5,title:'Noodle soup', srcImg:"/images/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
+    {id: 3,title:"noodles_soup.png",srcImg:"/images/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
     {id: 6,title:'Wok', srcImg:"/images/wok_paprika.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
 ]
 
-const recipes = [
-    {id: 1,title:'Vegetables Noodle soup', srcImg:"/images/potage_aux_nouilles_et_legumes_.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 2,title:'Pastilla', srcImg:"/images/pastilla.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 3,title:'Tajine', srcImg:"/images/tajine.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 4,title:'Donuts', srcImg:"/images/donuts.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 5,title:'Noodle soup', srcImg:"/images/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 6,title:'Wok', srcImg:"/images/wok_paprika.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-]
+
+const recipes = latestRecipes.concat(popularRecipes);
 
 
 app.get('/', (req, res) => {
 
   res.render('index', { title: 'Home',latestRecipes,popularRecipes});
-})
+});
+app.get('/all-recipes', (req, res) => {
 
-    // single recipe
-    app.get('/recipe/:id', (req, res) => {
-        // find the recipe in the `recipes` array
-        const recipe = recipes.filter((recipe) => {
-          return recipe.id == req.params.id
-        })[0]
-        // render the `recipe` template with the post content
-        res.render('recipe', {
-            title: recipe.title,
-            recipe
-        })
-      })
+  Recipe.find()
+  .then((result) => {
+    res.send(result)
+  })
+  .catch((err) => {
+    console.log(err)
+  });
+});
+
+
+
+// single recipe
+app.get('/recipe/:id', (req, res) => {
+    // find the recipe in the `recipes` array
+    const recipe = recipes.filter((recipe) => {
+      return recipe.id == req.params.id
+    })[0]
+    // render the `recipe` template with the post content
+    res.render('recipe', {
+        title: recipe.title,
+        recipe
+    })
+  })
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About'});
@@ -73,7 +104,6 @@ app.get('/contact', (req, res) => {
 })
 
 //404 page
-
 app.use((req,res)=> {
-    res.status(404).render('404', { title: '404'})
+    res.status(404).render('404', { title: '404'});
 });

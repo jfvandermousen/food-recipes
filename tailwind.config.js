@@ -1,6 +1,5 @@
 module.exports = {
-  content: ["./views/**/*.{html,js}","./views/index.html",'./pages/**/*.{html,js}',
-  './components/**/*.{html,js}',],
+  content: ["./views/**/*.{html,js,ejs}","./src/**/*.{html,js}"],
   theme: {
     extend: {
       colors:{
