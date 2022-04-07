@@ -1,20 +1,19 @@
 const express = require('express');
 const { use } = require('express/lib/application');
 const mongoose = require('mongoose');
+const morgan = require('morgan');
+require('dotenv').config();
 const Recipe = require('./models/recipe');
 
-const morgan = require('morgan');
 const app = express();
-
-//Mongo DB connection
-const dbURI = 'mongodb+srv://jf:jfvan7182@recipes.dujns.mongodb.net/recipesblog?retryWrites=true&w=majority';
-
 const port = 5000
 
+//Mongo DB connection
 
+const dbURI = `mongodb+srv://jf:${process.env.MONGO_DB_PASSWORD}@recipes.dujns.mongodb.net/recipesblog?retryWrites=true&w=majority`;
 
  mongoose.connect(dbURI)
- .then(() => app.listen(port))
+ .then(() => app.listen(port), console.log('Connected'))
   .catch(error => console.log(error));
 
 // register view engines
@@ -28,10 +27,10 @@ app.use(morgan('dev'));
 
 app.get('/add-recipe',(req,res) => {
   const recipe = new Recipe({
-    title:'Vegetables Noodle soup',
+    title:'Pastilla',
     srcImg :'/images/potage_aux_nouilles_et_legumes_.jpg',
     cooker:'Marina',
-    time:25,
+    time:45,
     difficulty: 'Medium',
     tags: 'latest',
     description: 'Boil 1/2Liter of water, put the noodles 3minutes....'
@@ -65,9 +64,21 @@ app.get('/', (req, res) => {
 
   res.render('index', { title: 'Home',latestRecipes,popularRecipes});
 });
+
+
 app.get('/all-recipes', (req, res) => {
 
   Recipe.find()
+  .then((result) => {
+    res.send(result)
+  })
+  .catch((err) => {
+    console.log(err)
+  });
+});
+app.get('/single-recipe', (req, res) => {
+
+  Recipe.findById('624ef580024456634175d0b6')
   .then((result) => {
     res.send(result)
   })
