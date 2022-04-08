@@ -8,7 +8,7 @@ const recipeSchema = new Schema({
     },
     srcImg: {
       type: String,
-      required:true
+      required:false
     },
     cooker: {
       type: String,

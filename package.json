@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "watch": "nodemon --ejs *",
-    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/css/output.css --watch"
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./public/dist/output.css --watch"
   },
   "dependencies": {
     "dotenv": "^16.0.0",

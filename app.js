@@ -45,47 +45,34 @@ app.get('/add-recipe',(req,res) => {
 })
 
 
-const latestRecipes = [
-     {id: 1,title:'Vegetables Noodle soup', srcImg:"/images/potage_aux_nouilles_et_legumes_.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-      {id: 2,title:'Pastilla', srcImg:"/images/pastilla.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-      {id: 3,title:'Tajine', srcImg:"/images/tajine.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-]
-
+/*
 const popularRecipes =[
     {id: 3,title:"noodles_soup.png",srcImg:"/images/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
     {id: 6,title:'Wok', srcImg:"/images/wok_paprika.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
 ]
 
-
-const recipes = latestRecipes.concat(popularRecipes);
+*/
 
 
 app.get('/', (req, res) => {
 
-  res.render('index', { title: 'Home',latestRecipes,popularRecipes});
+  res.redirect('/recipes');
 });
 
 
-app.get('/all-recipes', (req, res) => {
 
+app.get('/recipes',(req,res) => {
   Recipe.find()
   .then((result) => {
-    res.send(result)
+    res.render('index',{title:'Home',recipes: result})
   })
   .catch((err) => {
-    console.log(err)
-  });
-});
-app.get('/single-recipe', (req, res) => {
+    console.log(err);
+  })
+})
 
-  Recipe.findById('624ef580024456634175d0b6')
-  .then((result) => {
-    res.send(result)
-  })
-  .catch((err) => {
-    console.log(err)
-  });
-});
+
+
 
 
 
@@ -107,7 +94,7 @@ app.get('/about', (req, res) => {
   })
 
 app.get('/recipes/create', (req, res) => {
-    res.render('create', { title: 'Create'});
+    res.render('create', { title: 'Add new recipe'});
   })
 
 app.get('/contact', (req, res) => {

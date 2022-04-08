@@ -37,8 +37,8 @@
             <div class="mt-8 grid gap-10 md:grid-cols-3" >
                 <!--cards-->
 
-                <% if(latestRecipes.length > 0 ) { %>
-                    <% latestRecipes.forEach(recipe => { %>
+                <% if(recipes.length > 0 ) { %>
+                    <% recipes.slice(-3).forEach(recipe => { %>
                         <a href="/recipe/<%= recipe.id %>"> 
                             <div class="card">
                             <img src=<%= recipe.srcImg %> alt="Vegetables Noodle soup"class="w-full object-cover">
@@ -68,7 +68,7 @@
                 <%  }) %>
 
                <% }else { %>
-                    <p> There is actually no recipes...</p>
+                    <p> There is actually no recent recipes...</p>
                     <%  } %>
 
 
@@ -81,9 +81,12 @@
                 <!--cards-->
                 <div class="mt-8 grid gap-10 md:grid-cols-3" >
                     <!--cards-->
-                    <% if(popularRecipes.length > 0 ) { %>
-                        <% popularRecipes.forEach(recipe => { %>
-                            <a href="/recipe/<%= recipe.id %>"> 
+                    <% if(recipes.length > 0 ) { %>
+                        <% recipes.forEach(recipe => { %>
+                         <%  if(recipe.tags == "popular") { %>
+
+                         
+                            <a href="/recipe/<%= recipe.title %>"> 
                             <div class="card">
                                 <img src=<%= recipe.srcImg %> alt="Vegetables Noodle soup"class="w-full object-cover">
                                 <div class="m-4">
@@ -108,6 +111,8 @@
                                 </div>
                             </div>
                         </a>
+                        
+                   <% } %>
                     <%  }) %>
     
                    <% }else { %>
