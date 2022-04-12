@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&family=Rubik+Puddles&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .card {
-    @apply  bg-white rounded-lg overflow-hidden shadow-md relative hover:scale-105;
+    @apply  bg-white rounded-lg shadow-md relative hover:scale-105;
+}
+h1 {
+  font-size: 25px;
+}
+.desc {
+  margin-bottom: 2rem;
+}
+.delete {
+  @apply   bg-primary text-white font-bold px-5 py-2 hover:text-primary hover:bg-white transition ease-out duration-500 cursor-pointer;
 }
 
 .badge {
@@ -17,7 +26,10 @@
 .title {
     @apply  text-title font-bold hover:text-primary transition ease-out duration-500 cursor-pointer;
 }
-
+.main-title {
+  font-family: 'Rubik Moonrocks', cursive;
+  font-size: 2rem;
+}
 
     .create-recipe form{
         max-width: 400px;
@@ -30,7 +42,7 @@
         width: 100%;
         margin: 10px 0;
         padding: 8px;
-        border: 1px solid black;
+        border: 1px solid rgb(230, 230, 230);
       }
       .create-recipe label{
         @apply  text-title font-bold cursor-pointer mt-6;
@@ -40,7 +52,7 @@
       }
       .create-recipe button{
 
-        @apply  text-white bg-primary p-4 border-0 font-bold cursor-pointer mt-5;
+        @apply  text-white bg-primary py-2 px-4 border-0 font-bold cursor-pointer mt-5;
 
       }
   

@@ -1,9 +1,12 @@
 const express = require('express');
 const { use } = require('express/lib/application');
+const { render } = require('express/lib/response');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+
+const recipeRoutes = require('./routes/recipeRoutes');
+
 require('dotenv').config();
-const Recipe = require('./models/recipe');
 
 const app = express();
 const port = 5000
@@ -20,87 +23,27 @@ const dbURI = `mongodb+srv://jf:${process.env.MONGO_DB_PASSWORD}@recipes.dujns.m
 
 app.set('view engine', 'ejs');
 
+// Middleware
 
-
-app.use(express.static('public'))
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
 app.use(morgan('dev'));
 
-app.get('/add-recipe',(req,res) => {
-  const recipe = new Recipe({
-    title:'Pastilla',
-    srcImg :'/images/potage_aux_nouilles_et_legumes_.jpg',
-    cooker:'Marina',
-    time:45,
-    difficulty: 'Medium',
-    tags: 'latest',
-    description: 'Boil 1/2Liter of water, put the noodles 3minutes....'
-  });
-  recipe.save()
-  .then((result) => {
-    res.send(result)
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-})
-
-
-/*
-const popularRecipes =[
-    {id: 3,title:"noodles_soup.png",srcImg:"/images/noodles_soup.png",cooker:"Marina", time:25,difficulty:"Medium"},
-    {id: 6,title:'Wok', srcImg:"/images/wok_paprika.jpg",cooker:"Marina", time:25,difficulty:"Medium"},
-]
-
-*/
-
+app.use(recipeRoutes);
 
 app.get('/', (req, res) => {
-
   res.redirect('/recipes');
 });
-
-
-
-app.get('/recipes',(req,res) => {
-  Recipe.find()
-  .then((result) => {
-    res.render('index',{title:'Home',recipes: result})
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-})
-
-
-
-
-
-
-// single recipe
-app.get('/recipe/:id', (req, res) => {
-    // find the recipe in the `recipes` array
-    const recipe = recipes.filter((recipe) => {
-      return recipe.id == req.params.id
-    })[0]
-    // render the `recipe` template with the post content
-    res.render('recipe', {
-        title: recipe.title,
-        recipe
-    })
-  })
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About'});
   })
 
-app.get('/recipes/create', (req, res) => {
-    res.render('create', { title: 'Add new recipe'});
-  })
 
-app.get('/contact', (req, res) => {
+/*app.get('/contact', (req, res) => {
     res.render('contact', { title: 'Contact'});
 })
-
+*/
 //404 page
 app.use((req,res)=> {
     res.status(404).render('404', { title: '404'});
