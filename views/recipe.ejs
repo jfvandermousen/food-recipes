@@ -11,9 +11,9 @@
         <div class="w-4/5 mx-auto py-8">
           <div class="flex flex-wrap justify-around  ">
                 <div class="card w-2/5 h-fit">
-                    <img src= '<%= recipe.srcImg %>'  class="w-full max-h-max">
+                    <img src="../images/<%= recipe.srcImg %>"  class="w-full max-h-max">
                     <div class="m-4">
-                        <h2 class="title"><%= recipe.title %></h2>
+                        <h2 class="title "><%= recipe.title %></h2>
                         <span class="block text-gray-500 text-sm">Recipe by <%= recipe.cooker %></span>
                         <div class="mt-1 opacity-70 flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="desc-bloc w-2/5">
-                    <h1 class="title"><%= recipe.title %></h1>
+                    <h1 class="title single"><%= recipe.title %></h1>
                     <div class="desc"><%= recipe.description %></div>
                     <span><a class="delete" data-doc="<%= recipe._id %>">Delete this recipe</a></span>
                 </div>
