@@ -1034,6 +1034,8 @@ h1 {
 
 .title{
   cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(108 194 74 / var(--tw-text-opacity));
@@ -1048,6 +1050,11 @@ h1 {
 .title:hover{
   --tw-text-opacity: 1;
   color: rgb(255 99 99 / var(--tw-text-opacity));
+}
+
+h1.title.single {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .main-title {

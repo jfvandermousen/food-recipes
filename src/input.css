@@ -24,7 +24,13 @@ h1 {
     @apply  py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
 .title {
-    @apply  text-title font-bold hover:text-primary transition ease-out duration-500 cursor-pointer;
+    @apply  text-title text-lg font-bold hover:text-primary transition ease-out duration-500 cursor-pointer;
+
+}
+
+h1.title.single {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .main-title {
   font-family: 'Rubik Moonrocks', cursive;

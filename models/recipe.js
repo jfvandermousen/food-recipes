@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const recipeSchema = new Schema({
     title: {
       type: String,
-      required:true
+      required:'This field is required',
     },
     srcImg: {
       type: String,
-      required:false,
+      required:true,
     },
     cooker: {
       type: String,

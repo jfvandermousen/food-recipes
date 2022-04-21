@@ -6,9 +6,9 @@ const router = express.Router();
 
 
 
-router.post('/recipes',recipeController.recipe_create_post);
+router.post('/create',recipeController.recipe_create_post);
 
-router.get('/recipes/create', recipeController.recipe_create_get);
+router.get('/create', recipeController.recipe_create_get);
   
 router.get('/recipe/:id', recipeController.recipe_details);
   
