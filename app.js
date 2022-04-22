@@ -10,14 +10,14 @@ const recipeRoutes = require('./routes/recipeRoutes');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 //Mongo DB connection
 
 const dbURI = `mongodb+srv://jf:${process.env.MONGO_DB_PASSWORD}@recipes.dujns.mongodb.net/recipesblog?retryWrites=true&w=majority`;
 
  mongoose.connect(dbURI ,{useNewUrlParser:true, useUnifiedTopology: true})
- .then(() => app.listen(port), console.log('Connected'))
+ .then(() => app.listen(process.env.PORT || 3000), console.log('Connected'))
   .catch(error => console.log(error));
 
 // register view engines
