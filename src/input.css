@@ -7,6 +7,9 @@
 .card {
     @apply  bg-white rounded-lg shadow-md relative hover:scale-105;
 }
+.main {
+  @apply px-16 py-6 bg-gray-50 lg:w-3/5;
+}
 h1 {
   font-size: 25px;
 }
@@ -24,7 +27,7 @@ h1 {
     @apply  py-2 px-3 uppercase text-xs font-bold cursor-pointer tracking-wider;
 }
 .title {
-    @apply  text-title text-lg font-bold hover:text-primary transition ease-out duration-500 cursor-pointer;
+    @apply  text-title text-xl font-bold hover:text-primary transition ease-out duration-500 cursor-pointer;
 
 }
 
@@ -33,13 +36,13 @@ h1.title.single {
   margin-bottom: 1rem;
 }
 .main-title {
-  font-family: 'Rubik Moonrocks', cursive;
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
     .create-recipe form{
         max-width: 400px;
-        margin: 0 auto;
+        
       }
       .create-recipe input,
       .create-recipe textarea{
@@ -60,5 +63,11 @@ h1.title.single {
 
         @apply  text-white bg-primary py-2 px-4 border-0 font-bold cursor-pointer mt-5;
 
+      }
+
+      .email-box img {
+        width: 70%;
+        height: auto;
+        margin: auto;
       }
   

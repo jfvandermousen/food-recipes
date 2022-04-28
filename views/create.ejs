@@ -1,9 +1,9 @@
 <html lang="en">
     <%- include ('./partials/head.ejs') %>
     <body>
-        <%- include ('./partials/header.ejs') %>
-
-  <div class="main-container">
+    <%- include ('./partials/header.ejs') %>
+    <div class="flex-col items-center" > 
+    <div class="main m-auto">
     <div class="create-recipe content">
       <form action="/create" enctype="multipart/form-data" method="POST">
         <label for="title">Recipe title:</label>
@@ -30,7 +30,9 @@
         <button type="submit">Submit</button>
       </form>
     </div>
-</div>
+  </div>
+    </main>
+  </main>
 
   <%- include("./partials/footer.ejs") %>
 </body>
