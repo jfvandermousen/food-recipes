@@ -8,10 +8,10 @@ module.exports = {
           100: "#E2E2D5",
           200: "#888883",
       },
-      title: '#6cc24a',
+      title: '#505050',
     },
     fontFamily: {
-      body: ['Nunito Sans']
+      body : ['Nunito']
     }
   },
   plugins: [],

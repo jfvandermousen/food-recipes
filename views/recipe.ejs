@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
     <%- include ('./partials/head.ejs') %>
     <body>
         <%- include ('./partials/header.ejs') %>
         
-        <div class="w-4/5 mx-auto py-8">
-          <div class="flex flex-wrap justify-around  ">
-                <div class="card w-2/5 h-fit">
+        <div class="w-3/5 mx-auto py-8">
+          <div class="flex flex-wrap justify-start gap-10">
+                <div class="card w-80 h-fit">
                     <img src="../images/<%= recipe.srcImg %>"  class="w-full max-h-max">
                     <div class="m-4">
                         <h2 class="title "><%= recipe.title %></h2>
@@ -34,7 +31,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="desc-bloc w-2/5">
+                <div class="desc-bloc basis-3/5">
                     <h1 class="title single"><%= recipe.title %></h1>
                     <div class="desc"><%= recipe.description %></div>
                     <span><a class="delete" data-doc="<%= recipe._id %>">Delete this recipe</a></span>

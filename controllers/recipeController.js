@@ -53,6 +53,7 @@ const recipe_create_post = (req,res) => {
       time: req.body.time,
       difficulty: req.body.difficulty,
       description: req.body.description,
+      ingredients : req.body.ingredients,
       srcImg: newImageName,
     });
 
